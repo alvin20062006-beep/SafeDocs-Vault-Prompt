@@ -39,7 +39,6 @@ serverless implementation blueprint covering:
 
 ## How to Use
 
-## How to Use
 
 1. Copy and paste this prompt into Claude, ChatGPT, Amazon Bedrock, or another LLM assistant.
 2. Provide a short event brief or use the default configuration.
