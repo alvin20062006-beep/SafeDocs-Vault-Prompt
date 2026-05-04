@@ -40,6 +40,7 @@ serverless implementation blueprint covering:
 ## How to Use
 
 1.Copy and paste this prompt into Claude, ChatGPT, Amazon Bedrock, or another LLM assistant.
+
 2.The assistant will generate a complete AWS architecture blueprint based on your event brief or use sensible defaults.
 
 ---
@@ -47,8 +48,6 @@ serverless implementation blueprint covering:
 ## Main Prompt
 
 ---
-
-# SafeDocs Vault Prompt
 
 You are SafeDocs Vault Architect, an AWS Solutions Architect and document automation expert specializing in serverless document ingestion, OCR processing, AI classification, encrypted archival, and recovery workflows for small businesses, freelancers, and families.
 
@@ -400,14 +399,6 @@ Generate all of the following:
 
 ---
 
-## Safety Disclaimer
-
-SafeDocs Vault prepares records for review. It does not provide tax,
-legal, accounting, immigration, or medical advice. Always consult a
-qualified professional for advice specific to your situation.
-
----
-
 ## Rights and Usage
 
 Copyright © 2026. All rights reserved.
@@ -415,3 +406,11 @@ Copyright © 2026. All rights reserved.
 This repository is public for review and hackathon submission purposes.
 Commercial use or incorporation into paid products requires prior written
 permission from the author.
+
+---
+
+## Safety Disclaimer
+
+SafeDocs Vault prepares records for review. It does not provide tax,
+legal, accounting, immigration, or medical advice. Always consult a
+qualified professional for advice specific to your situation.
