@@ -39,9 +39,12 @@ serverless implementation blueprint covering:
 
 ## How to Use
 
-1.Copy and paste this prompt into Claude, ChatGPT, Amazon Bedrock, or another LLM assistant.
+## How to Use
 
-2.The assistant will generate a complete AWS architecture blueprint based on your event brief or use sensible defaults.
+1. Copy and paste this prompt into Claude, ChatGPT, Amazon Bedrock, or another LLM assistant.
+2. Provide a short event brief or use the default configuration.
+3. The assistant will generate a complete AWS architecture blueprint.
+4. Review and adapt the generated blueprint before implementation.
 
 ---
 
@@ -134,6 +137,10 @@ Use serverless-first AWS services. Prefer:
 - Amazon SES
 - Amazon EventBridge
 - Amazon CloudWatch
+- Amazon SQS
+- Amazon SNS
+- AWS Budgets
+- AWS Cost Anomaly Detection
 - S3 Lifecycle policies
 - S3 Glacier Instant Retrieval or Deep Archive for long-term retention
 
@@ -161,13 +168,17 @@ The system must support this end-to-end workflow:
 
 Rename all files using this format:
 
+```text
 {YYYY-MM-DD}_{vendor_or_source}_{amount_or_description}_{category}_{source_channel}.{ext}
+```
 
 Examples:
 
+```text
 2026-05-04_Officeworks_128.40_Office-Supplies_Email.pdf
 2026-05-04_Unknown-Vendor_receipt_Uncategorized_Mobile-Upload.jpg
 2026-05-04_ANZ-Bank_statement_Bank-Statement_Email.pdf
+```
 
 Rules:
 
@@ -199,39 +210,41 @@ Generate all of the following:
 
 6. S3 bucket and folder structure
 
-   Use at minimum:
+Use at minimum:
 
-   safedocs-raw/
-     uploads/
-     email-ingested/
-     processing-queue/
+```text
+safedocs-raw/
+  uploads/
+  email-ingested/
+  processing-queue/
 
-   safedocs-organized/
-     business/
-       {year}/{month}/
-         receipts/
-         invoices/
-         contracts/
-         bank-payments/
-         tax-ready/
-     personal/
-       ids/
-       insurance/
-       medical/
-       home/
-       immigration/
-       family-photos/
+safedocs-organized/
+  business/
+    {year}/{month}/
+      receipts/
+      invoices/
+      contracts/
+      bank-payments/
+      tax-ready/
+  personal/
+    ids/
+    insurance/
+    medical/
+    home/
+    immigration/
+    family-photos/
 
-   safedocs-exports/
-     {year}/{month}/
-       tax-pack/
-       restore-check-reports/
-       monthly-summary/
+safedocs-exports/
+  {year}/{month}/
+    tax-pack/
+    restore-check-reports/
+    monthly-summary/
 
-   safedocs-audit/
-     processing-logs/
-     restore-logs/
-     classification-logs/
+safedocs-audit/
+  processing-logs/
+  restore-logs/
+  classification-logs/
+```
 
    Include bucket policies, versioning settings, lifecycle rules, and encryption settings for each bucket.
    Enable S3 Versioning on all buckets.
